@@ -19,27 +19,27 @@ namespace IfTask4
             userInput = Console.ReadLine();
             int z = int.Parse(userInput);
 
-            if(x < y && z < x)
+            if (x < y && z < x)
             {
                 Console.WriteLine($"Luvut suuruusjärjestyksessä {z} - {x} - {y}");
             }
-            else if(x < y && x < z && y < z)
+            else if (x < y && x < z && y < z)
             {
                 Console.WriteLine($"Luvut suuruusjärjestyksessä {x} - {y} - {z}");
             }
-            else if(x < y && x < z && z < y)
+            else if (x < y && x < z && z < y)
             {
                 Console.WriteLine($"Luvut suuruusjärjestyksessä {x} - {z} - {y}");
             }
-            else if(y < x && x < z)
+            else if (y < x && x < z)
             {
                 Console.WriteLine($"Luvut suuruusjärjestyksessä {y} - {x} - {z}");
             }
-            else if(y < x && z < x && y < z)
+            else if (y < x && z < x && y < z)
             {
                 Console.WriteLine($"Luvut suuruusjärjestyksessä {y} - {z} - {x}");
             }
-            else if(y < x && z < x && z < y)
+            else if (y < x && z < x && z < y)
                 Console.WriteLine($"Luvut suuruusjärjestyksessä {z} - {y} - {x}");
 
         }
