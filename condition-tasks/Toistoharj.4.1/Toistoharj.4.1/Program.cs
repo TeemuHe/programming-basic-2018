@@ -22,12 +22,12 @@ namespace Toistoharj._4._1
 
 
 
-            int i = 0;
-            while (i<10)
+            //int i = 0;
+            //while (i<10)
             {
-                rndNumber = rnd.Next(0, 100);
-                Console.WriteLine($"{i + 1}.\t{rndNumber}\t{Math.Sqrt(rndNumber)}");
-                i = i + 1; //i++
+                //rndNumber = rnd.Next(0, 100);
+                //Console.WriteLine($"{i + 1}.\t{rndNumber}\t{Math.Sqrt(rndNumber)}");
+                //i = i + 1; //i++
             }
         }
 
