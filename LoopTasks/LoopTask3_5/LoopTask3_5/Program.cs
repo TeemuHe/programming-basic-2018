@@ -7,7 +7,7 @@ namespace LoopTask3_5
         static void Main(string[] args)
         {
             int number = 0;
-            int i = 1;
+            
             int evenSum = 0;
             int oddSum = 0;
 
@@ -17,9 +17,10 @@ namespace LoopTask3_5
 
             if (number >= 0)
             {
-                
+                int i = 1;
                     while (i <= number)
                     {
+                        
                         if (i % 2 == 0)
                         {
                             evenSum = evenSum + i;  //evenSum += i;
@@ -41,9 +42,10 @@ namespace LoopTask3_5
 
             else if (number <= 0)
             {
-                
+                int i = -1;
                     while (i >= number)
                     {
+                        
                         if (i % 2 == 0)
                         {
                             evenSum = evenSum + i;  //evenSum += i;     
