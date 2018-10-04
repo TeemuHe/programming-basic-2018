@@ -46,7 +46,7 @@ namespace LoopTask3_5
                     {
                         if (i % 2 == 0)
                         {
-                            evenSum = evenSum + i;  //evenSum += i;
+                            evenSum = evenSum + i;  //evenSum += i;     
                         }
                         else
                         {
