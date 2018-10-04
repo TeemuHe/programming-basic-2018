@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LoopTask1
+namespace LoopTask_3_1
 {
     class Program
     {
