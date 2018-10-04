@@ -7,19 +7,45 @@ namespace LoopTask1
         static void Main(string[] args)
         {
             Console.WriteLine("Ohjelma tulostaa luvun kertoman.");
-            Console.Write("Syötä luku, joka on vähintään 1: ");
-
-            string userInput = Console.ReadLine();
-            int number = 0;
-            bool isnumber = int.TryParse(userInput, out number);
-            if (isnumber)
-            {
-                if (number <= 1)
-                    Console.WriteLine("Väärä syöte!");
             
 
+            int number = 0;
+            int i = 1;
+            int fact = 1;
 
+            //Check that number is positive
+            do
+            {
+                Console.Write("Syötä luku: ");
+                number = int.Parse(Console.ReadLine());
+                //string userInput = Console.ReadLine();
+                //number = int.Parse(userInput);
+
+                if (number <= 0)
+                {
+                    Console.WriteLine("Virheellinen syöte!");
+                }
+                    
+
+
+            } while (number <= 0);
+
+            // Calculate factorial 1 * 2 * 3 * ... * n
+            while(i <= number)
+            {
+                fact = fact * i;   //fact=*i
+                i = i + 1;         //i++;
             }
+
+            //for(i=1;i<=number;i++)
+            //{
+            //    fact *= i;
+            //}
+
+            Console.WriteLine($"Luvun {number} kertoma! = {fact} ");
+
+
+            
 
 
         }
