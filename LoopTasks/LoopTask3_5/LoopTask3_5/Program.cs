@@ -58,6 +58,7 @@ namespace LoopTask3_5
                         Console.WriteLine($"Parillisten summa on {evenSum}");
                         Console.WriteLine($"Parittomien summa on {oddSum}");
 
+                      
             }
                    
         }
