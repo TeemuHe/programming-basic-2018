@@ -6,12 +6,11 @@ namespace LoopTask3_2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Ohjelma laskee N ensimmäistä lukua yhteen!");
             int number = 0;
             int i = 1;
-            int sum = 1;
+            int sum = 0;
 
-            //Check that number is positive
+            Console.WriteLine("Ohjelma laskee N ensimmäistä lukua yhteen!");
 
             do
             {
@@ -24,12 +23,12 @@ namespace LoopTask3_2
                 }
             } while (number <= 0);
 
-            //Calculate sum 1 + 2 + 3 + ...+ N
             while (i <= number)
             {
-                sum = sum + 1;
-                i = i + 1;
+                sum = sum + i;   
+                i = i + 1;         
             }
+
             Console.WriteLine($"{number} ensimmäisen luvun summa = {sum}");
 
            
