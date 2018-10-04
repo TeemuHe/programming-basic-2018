@@ -7,7 +7,7 @@ namespace LoopTask3_3
         static void Main(string[] args)
         {
             int number = 0;
-            int i = 1;
+            int i = 1;      
             int evenSum = 0;
             int oddSum = 0;
 
