@@ -9,7 +9,7 @@ namespace LoopTask_3_1
             Console.WriteLine("Ohjelma tulostaa luvun kertoman.");
             
 
-            int number = 0;
+            int number = 0;    
             int i = 1;
             int fact = 1;
 
