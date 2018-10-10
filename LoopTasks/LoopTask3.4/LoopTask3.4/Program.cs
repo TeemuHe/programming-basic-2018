@@ -30,7 +30,7 @@ namespace LoopTask3._4
                 while (i >= number)
                 {
                     sum = sum + i;
-                    i = i + 1;
+                    i = i - 1;
                 }
                 Console.WriteLine($"{number} ensimmäisen luvun summa = {sum}");
             }
