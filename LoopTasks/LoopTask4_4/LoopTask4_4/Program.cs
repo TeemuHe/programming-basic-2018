@@ -6,32 +6,27 @@ namespace LoopTask4_4
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Ohjelma simuloi kolikonheiton tuloksen." +
-                "\nKolikkoa heitetään 20 kertaa.");
-
+            Console.WriteLine("Ohjelma simuloi kolikonheiton tuloksen.");
+            Console.Write("Kuinka monesti kolikkoa heitetään? ");
+            int counter = int.Parse(Console.ReadLine());
             int heads = 0;
             int tails = 0;
-
             Random rnd = new Random();
-
-            double flip;
-
-            //Console.Write("Syötä luku, montako kertaa kolikkoa heitetään? ");
             
-            for (int i = 0; i != 20; i++)
+            for (int i = 0; i != counter; i++)
             {
-                flip = rnd.NextDouble();
-                if (flip > 0.5)
-                {
-                    heads = heads + 1;
-                }
-                else
+                int rndNumber = rnd.Next(2);
+                if (rndNumber==0)
                 {
                     tails = tails + 1;
                 }
+                else
+                {
+                    heads = heads + 1;
+                }
 
             }
-            Console.WriteLine($"\nKruunien määrä {heads} ja klaavojen määrä {tails}.");
+            Console.WriteLine($"Rahaa heitettiin {counter} kertaa ja kruunia saatiin {heads} ja klaavojen saatiin {tails}.");
         }
     }
 }
