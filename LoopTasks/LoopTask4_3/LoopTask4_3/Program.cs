@@ -12,7 +12,7 @@ namespace LoopTask4_3
             Console.WriteLine("Ohjelma tulostaa 20 satunnaista kokonaislukua väliltä 0 - 50.\n" +
                 "Jokaiselle tulostetulle riville tulostetaan 5 lukua pilkulla erottaen.");
 
-            for (int i = 1; i <= 5; i++)
+            for (int i = 1; i <= 4; i++)
             {
                 Console.Write($"Rivi {i} ");
                 for (int j = 1; j <= 5; j++)
