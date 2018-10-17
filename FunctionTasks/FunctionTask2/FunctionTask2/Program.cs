@@ -6,24 +6,28 @@ namespace FunctionTask2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Ohjelma palauttaa kahdesta annetusta luvusta pienemmän.");
-            Console.Write("Syötä luku: ");
-            int number1 = int.Parse(Console.ReadLine());
-            Console.Write("Syötä toinen luku: ");
-            int number2 = int.Parse(Console.ReadLine());
-            Compare(number1, number2);
-        }
-        public static void Compare(int number1, int number2)
-        {
-            if (number1 < number2)
-            {
-                Console.WriteLine($"Luku {number1} on pienempi kuin luku {number2}.");
-            }
-            else
-            {
-                Console.WriteLine($"Luku {number2} on pienempi kuin luku {number1}.");
-            }
+            int x, y;
+            Intro(out x, out y);
+            Console.WriteLine(SmallerNumber(x, y));
         }
 
+        static void Intro(out int number1, out int number2)
+        {
+            Console.WriteLine("Ohjelma palauttaa kahdesta annetusta luvusta pienemmän.");
+            Console.Write("Syötä luku: ");
+            number1 = int.Parse(Console.ReadLine());
+            Console.Write("Syötä toinen luku: ");
+            number2 = int.Parse(Console.ReadLine());
+        }
+
+        static string SmallerNumber(int a, int b)
+        {
+            if (a == b)
+                return $"Luku {a} on yhtäsuuri kuin {b}.";
+            else if (b < a)
+                return $"Luku {b} on pienempi kuin {a}.";
+            else 
+                return $"Luku {a} on pienempi kuin {b}.";
+        }
     }
 }
