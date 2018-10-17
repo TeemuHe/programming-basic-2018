@@ -9,7 +9,7 @@ namespace LoopTask4_5
             Console.WriteLine("Ohjelma simuloi 1000 nopanheittoa ja laskee kuinka monta kutosta saadaan.");
             Random rnd = new Random();
             int kuusi = 0;
-            int noppa = 0;
+
             for (int i = 1; i != 1001; i++)
             {
                 Console.Write($"{i}.  ");
