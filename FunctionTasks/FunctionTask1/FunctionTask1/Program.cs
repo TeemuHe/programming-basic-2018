@@ -6,21 +6,33 @@ namespace FunctionTask1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Ohjelma palauttaa tietyn määrän tähtiä.");
-            Console.Write("Syötä luku: ");
-            string userInput = Console.ReadLine();
-            int numberOfStars;
-            int.TryParse(userInput, out numberOfStars);
-
-            if (numberOfStars < 0)
-                Console.WriteLine("Virheellinen syöte!");
-            else
-                for (int i = 0; i < numberOfStars; i++)
+            int n;
+            while (true)
+            {
+                Console.Write("Syötä luku: ");
+                n = int.Parse(Console.ReadLine());
+                if (n < 0)
                 {
-                    Console.Write("*");
+                    Console.WriteLine("Luku ei ole sallittu.");
                 }
-            Console.WriteLine();
-
+                else
+                {
+                    break;
+                }
+            }
+            string stars = getNStars(n);
+            Console.WriteLine(stars);
+            Console.ReadKey();
         }
+        static string getNStars(int n)
+        {
+            string res = string.Empty;
+            for (int i = 0; i < n; i++)
+            {
+                res += '*';
+            }
+            return res;
+        }
+
     }
 }
