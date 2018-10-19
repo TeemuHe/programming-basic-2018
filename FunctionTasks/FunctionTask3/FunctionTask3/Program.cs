@@ -6,28 +6,30 @@ namespace FunctionTask3
     {
         static void Main(string[] args)
         {
-            int nmbr;
-            NumChecker(int nmbr);
+            Console.WriteLine("Käyttäjältä pyydetän luku, joka on väliltä 1-10.");
+            int number = numberFromRange (1, 10);
+            Console.WriteLine($"Lukusi {number} on väliltä 1-10.");
         }
-
-        private static int NumChecker(int number)
+        static int numberFromRange(int lowerBound, int upperBound)
         {
-            for (int i = 0; i < 1;)
+            int allowedNumber;
+            while (true)
             {
-                Console.WriteLine("Ohjelma katsoo onko syötetty luku väliltä 1-10.");
                 Console.Write("Syötä luku: ");
-                i = int.Parse(Console.ReadLine());
+                bool isNumber = int.TryParse(Console.ReadLine(), out int userInput);
 
-                if (i > 1 && i < 11)
+                if(userInput >= lowerBound && userInput <= upperBound)
                 {
-                    Console.WriteLine($"Luku {i} on väliltä 1-10.");
+                    allowedNumber = userInput;
+                    break;
                 }
-                else if (i > 10 && i < 1)
+                else
                 {
-                    Console.Write($"Syötä luku väliltä 1-10.");
-                    i++;
+                    Console.WriteLine("Virheellinen syöte!");
                 }
             }
-        }
+            return allowedNumber;
+        } 
+        
     }
 }
