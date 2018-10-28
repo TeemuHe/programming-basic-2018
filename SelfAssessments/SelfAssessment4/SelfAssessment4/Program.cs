@@ -1,13 +1,21 @@
 ﻿using System;
-
-namespace SelfAssessment4
+using System.Collections.Generic;
+namespace Self_evaluationTask4
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Ohjelma suorittaa perusaritmeettiset laskutoimitukset kahdella luvulla.");
+            Console.WriteLine("Ohjelma tulostaa kahden luvun perusaritmeettiset laskutoimitukset.");
+            Console.Write("Syötä luku: ");
+            int i = int.Parse(Console.ReadLine());
+            Console.Write("Syötä luku: ");
+            int j = int.Parse(Console.ReadLine());
 
+            Console.WriteLine($"{i} + {j} = {i + j:F2}");
+            Console.WriteLine($"{i} - {j} = {i - j:F2}");
+            Console.WriteLine($"{i} * {j} = {i * j:F2}");
+            Console.WriteLine($"{i} / {j} = {i / j:F2}");
         }
     }
 }
