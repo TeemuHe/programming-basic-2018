@@ -6,20 +6,31 @@ namespace FunctionTask4
     {
         static void Main(string[] args)
         {
-            NumberCollector();
+            int indx = 0;
+            Console.WriteLine("Syötä 10 lukua.");
+            Console.WriteLine($"Suurin luku {LargestNumber(ref indx)} oli {indx}. luku.");
         }
-        static void NumberCollector()
+
+        static int LargestNumber(ref int indx)
         {
-            Console.Write("Syötä 10 lukua: ");
-            for (int i = 1; i < 11;)
+            int largestNumber = 0;
+            for (int i = 0; i < 10; i++)
             {
-                if (i == 11)
+                Console.Write($"{i + 1}.  ");
+                int userNumber = int.Parse(Console.ReadLine());
+                if(userNumber < 0)
                 {
-                    Console.WriteLine($"Syötit luvut:");
+                    Console.WriteLine("Väärä syöte! Syötä positiivinen luku.");
+                    i--;
+                }
+                
+                if(userNumber > largestNumber)
+                {
+                    largestNumber = userNumber;
+                    indx = i + 1;
                 }
             }
-
-
+            return largestNumber;
         }
     }
 }
