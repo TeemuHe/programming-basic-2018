@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2016
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayTask2Lotto", "ArrayTask2Lotto\ArrayTask2Lotto.csproj", "{9080A1BF-9463-4218-861E-5E7DBF15E014}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9080A1BF-9463-4218-861E-5E7DBF15E014}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9080A1BF-9463-4218-861E-5E7DBF15E014}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9080A1BF-9463-4218-861E-5E7DBF15E014}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9080A1BF-9463-4218-861E-5E7DBF15E014}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {20BB3664-6D9A-42EE-BF0A-79182D995B95}
+	EndGlobalSection
+EndGlobal
