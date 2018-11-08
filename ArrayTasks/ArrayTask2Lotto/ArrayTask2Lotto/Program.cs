@@ -20,12 +20,12 @@ namespace ArrayTask2Lotto
                 else
                     i--;
             }
-            Console.WriteLine("Lottorivi: ");
+            Console.Write("Lottorivi: ");
             for (int i = 0; i < lotto.Length; i++)
             {
                 if (lotto[i] == 1)
                 {
-                    Console.Write($"{i} ");
+                    Console.Write($"{i + 1} ");
                 }
             }
             Console.WriteLine();
@@ -36,22 +36,40 @@ namespace ArrayTask2Lotto
                 {
                     lotto[extraNro] = 2;
                 }
-            }
-
-            for (int i = 0; i < 1; i++)
-            {
-                int rndNro = rnd.Next(40);
-                if (lotto[rndNro] == 0)
+                else
                 {
-                    lotto[rndNro] = 1;
+                    lotto[extraNro] = 2;
                 }
             }
-            Console.WriteLine("Lisänumero: ");
+
+            Console.Write("Lisänumero: ");
             for (int i = 0; i < lotto.Length; i++)
             {
                 if (lotto[i] == 2)
                 {
-                    Console.Write($"{i} ");
+                    Console.Write($"{i + 1} ");
+                }
+            }
+            Console.WriteLine();
+
+            for (int i = 0; i < 1; i++)
+            {
+                int plusNro = rnd.Next(40);
+                if (lotto[plusNro] == 0)
+                {
+                    lotto[plusNro] = 3;
+                }
+                else
+                {
+                    lotto[plusNro] = 3;
+                }
+            }
+            Console.Write("Tuplausnumero: ");
+            for (int i = 0; i < lotto.Length; i++)
+            {
+                if (lotto[i] == 3)
+                {
+                    Console.Write($"{i + 1} ");
                 }
             }
             Console.WriteLine();
