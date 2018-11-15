@@ -65,6 +65,7 @@ namespace ArrayTask2Lotto
                 }
             }
             Console.Write("Tuplausnumero: ");
+
             for (int i = 0; i < lotto.Length; i++)
             {
                 if (lotto[i] == 3)
