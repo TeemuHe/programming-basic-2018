@@ -10,7 +10,8 @@ namespace StringExample
             string data = "maanantai,tiistai,keskiviikko,torstai,perjantai,lauantai,sunnuntai";
             //Versio1(data);
             //Versio2(data);
-            Versio3(data);
+            string [] tmpData = Versio3(data);
+            PrintData(tmpData);
         }
         #region Versio1
         /// <summary>
@@ -60,15 +61,23 @@ namespace StringExample
         /// Funktio pilkkoo datan SPLIT-metodia hyödyntäen
         /// </summary>
         /// <param name="d"></param>
-        static void Versio3(string d)
+        static string[] Versio3(string d)
         {
             string[] tmpData = d.Split(',');
-
-            for (int i = 0; i < tmpData.Length; i++)
+            return tmpData;
+            /*for (int i = 0; i < tmpData.Length; i++)
             {
                 Console.WriteLine(tmpData[i]);
-            }
+            }*/
         }
         #endregion
+
+        static void PrintData(string [] d)
+        {
+            for (int i = 0; i < d.Length; i++)
+            {
+                Console.WriteLine(d[i]);
+            }
+        }
     }
 }
