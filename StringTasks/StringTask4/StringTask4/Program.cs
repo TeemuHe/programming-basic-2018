@@ -8,7 +8,8 @@ namespace StringTask4
         {
             Console.WriteLine("Ohjelma tarkastaa, onko syötetty sana tai lause palindromi.");
             Console.Write("Syötä sana tai lause: ");
-            string text = Console.ReadLine().ToUpper();
+            string text = Console.ReadLine().ToUpper().Replace(" ", "");
+            
             bool isPalindrome = true;
             for (int i = 0; i < text.Length/2; i++)
             {
