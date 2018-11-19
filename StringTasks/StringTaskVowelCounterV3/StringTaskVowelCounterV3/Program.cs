@@ -16,6 +16,7 @@ namespace StringTaskVowel
                 {
                     count++;
                 }
+
             }
             Console.WriteLine($"Tekstissä {input} on {count} vokaalia.");
         }
