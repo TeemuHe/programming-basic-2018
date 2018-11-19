@@ -10,7 +10,6 @@ namespace StringTaskVowel
             Console.Write("Syötä teksti: ");
             string input = Console.ReadLine().ToLower();
             int count = 0;
-
             for (int i = 0; i < input.Length; i++)
             {
 
