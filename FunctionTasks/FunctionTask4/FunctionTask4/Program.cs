@@ -16,6 +16,7 @@ namespace FunctionTask4
             int largestNumber = 0;
             for (int i = 0; i < 10; i++)
             {
+
                 Console.Write($"{i + 1}.  ");
                 int userNumber = int.Parse(Console.ReadLine());
                 if(userNumber < 0)
