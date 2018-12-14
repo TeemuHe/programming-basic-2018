@@ -6,11 +6,12 @@ namespace ReferenceNumber1
     {
         static void Main(string[] args)
         {
-            string refNumber = Intro();
-            bool isReal = Length(refNumber);
-            //Console.WriteLine(Reverse(refNumber));
+            string refNumberFull = Intro();
+            bool isReal = Length(refNumberFull);
             int[] factory = new int[] { 7, 3, 1 };
-            int checkNumber = LastNumber(refNumber, factory);
+            string refNumber = NoCheckNumber(refNumberFull);
+            int checkNumber = LastNumber(refNumberFull, factory);
+            LastNbrCheck(refNumber, checkNumber.ToString());
         }
         static string Intro()
         {
@@ -23,55 +24,62 @@ namespace ReferenceNumber1
         /// </summary>
         /// <param name="refNumber"></param>
         /// <returns></returns>
-
-        static bool Length(string refNumber)
+        static bool Length(string refNumberFull)
         {
-            if(refNumber.Length > 4 && refNumber.Length < 20)
+            if(refNumberFull.Length > 3 && refNumberFull.Length < 19)
             {
                 return true;
             }
             else
             {
-                Console.WriteLine("Virheellinen viitenumero!");
+                Console.WriteLine("Virheellisen pituinen viitenumero!");
                 return false;
             }
         }
-
         /// <summary>
-        /// Kääntää numerosarjan toisinpäin
+        /// Luodaan numerosarja ilman tarkastusnumeroa
         /// </summary>
         /// <param name="refNumber"></param>
         /// <returns></returns>
-
-        /*static string Reverse(string refNumber)
+        static string NoCheckNumber(string refNumberFull)
         {
-            string revNumber = "";
-            for (int i = refNumber.Length-1; i >= 0; i--)
-            {
-                revNumber += refNumber[i];
-            }
-            return revNumber;
-        }*/
+            string refNumber = refNumberFull.Substring(refNumberFull.Length-1);
+            //Console.WriteLine($"{refNumber}vikanro");
+            return refNumber;
+        }
         /// <summary>
         /// Luodaan tarkastusnumero
         /// </summary>
         /// <returns></returns>
-        static int LastNumber(string refNumber, int [] factory)
-        {
-
+        static int LastNumber(string refNumberFull, int [] factory)
+        {          
             int sum = 0;
-            int j = refNumber.Length - 1;
-
-            for (int i = 0; i < refNumber.Length; i++)
+            int j = refNumberFull.Length - 1;
+            for (int i = 0; i < refNumberFull.Length; i++)
             {
-                int nbr = Convert.ToInt32(refNumber[j]);
+                int nbr = Convert.ToInt32(refNumberFull[j].ToString());
                 sum += nbr * factory[i % 3];
                 j--;
             }
-
             int checkNumber = 10 - (sum % 10);
-
+            //Console.WriteLine($"{checkNumber} tarknro");
             return checkNumber;
+        }
+        /// <summary>
+        /// Tarkastetaan onko viimeinen numero sama kuin tarkastusnumero
+        /// </summary>
+        /// <param name="refNumber"></param>
+        /// <param name="checkNumber"></param>
+        static void LastNbrCheck(string refNumber, string checkNumber)
+        {           
+            if (refNumber == checkNumber.ToString())
+            {
+                Console.WriteLine("Viitenumero on oikea");
+            }
+            else
+            {
+                Console.WriteLine("Virheellinen viitenumero!");
+            }
         }
     }
 }
