@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace ReferenceNumber1
 {
@@ -6,13 +7,70 @@ namespace ReferenceNumber1
     {
         static void Main(string[] args)
         {
+            {
+                string choise = null;
+                string path = @"C:\TEMP\referencenumber.txt";
+                string msg = "";
+                do
+                {
+                    choise = UserInterface();
+
+                    switch (choise.ToUpper())
+                    {
+                        case "K":
+                            RefNumberTest(path);
+                            msg = "\nViitenumero tarkastettu! \nPaina Enter jatkaaksesi!";
+                            break;
+                        case "L":
+                            CreateRef(path);
+                            msg = "\nTiedoston loppuun kirjoitus on päättynyt! \nPaina Enter jatkaaksesi!";
+                            break;
+                        case "N":
+                            CreateRefs(path);
+                            msg = "\nTiedoston lukeminen on päättynyt! \nPaina Enter jatkaaksesi!";
+                            break;
+                        case "S":
+                            ShowFile(path);
+                            msg = "\nTiedoston lukeminen on päättynyt! \nPaina Enter jatkaaksesi!";
+                            break;
+                        case "X":
+                            msg = "\nOhjelman suoritus päättyy!";
+                            break;
+                        default:
+                            msg = "Nyt tuli huti yritä uudestaan - Paina Enter ja aloita alusta!";
+                            break;
+                    }
+
+                    Console.WriteLine(msg);
+                    Console.ReadLine();
+                    Console.Clear();
+                }
+                while (choise.ToUpper() != "X");
+
+            }
+        }
+        static string UserInterface()
+        {
+            Console.WriteLine("Tiedoston käsittely esimerkki!");
+            Console.WriteLine("[K] Tarkastaa viitenumeron oikeellisuuden");
+            Console.WriteLine("[L] Luodaan yksi viitenumero");
+            Console.WriteLine("[N] Luodaan haluttu määrä viitenumeroita");
+            Console.WriteLine("[S] Näytä luodut viitenumerot");
+            Console.WriteLine("[X] Lopeta ohjelmansuoritus");
+            Console.WriteLine();
+            Console.Write("Valitse mitä tehdään: ");
+
+            return Console.ReadLine();
+        }
+        static void RefNumberTest(string filePath)
+        {
             string refNumberFull = Intro();
             bool isReal = Length(refNumberFull);
             int[] factory = new int[] { 7, 3, 1 };
             string refNumber = NoCheckNumber(refNumberFull);
             int checkNumber = LastNumber(refNumberFull, factory);
             LastNbrCheck(refNumber, checkNumber.ToString());
-        }
+        }       
         static string Intro()
         {
             Console.WriteLine("Ohjelma tarkastaa kotimaisen viitenumeron.");
@@ -62,7 +120,7 @@ namespace ReferenceNumber1
                 j--;
             }
             int checkNumber = 10 - (sum % 10);
-            //Console.WriteLine($"{checkNumber} tarknro");
+            //Console.WriteLine($"{checkNumber}tarknro");
             return checkNumber;
         }
         /// <summary>
