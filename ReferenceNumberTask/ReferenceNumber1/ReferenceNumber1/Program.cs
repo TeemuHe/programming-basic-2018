@@ -139,12 +139,29 @@ namespace ReferenceNumber1
                 Console.WriteLine("Virheellinen viitenumero!");
             }
         }
+        /// <summary>
+        /// Tekee viitenumerosarjaan välit viiden numeron välein
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        static string StringSplitter(string str)
+        {
+            int j = str.Length - 1;
+            for (int i = 1; i < str.Length; i++)
+            {
+                if (i % 5 == 0 && j > 0)
+                {
+                    str = str.Insert(j, " ");
+                }
+                j--;
+            }
+            return str;
+        }
         static void CreateRef(string filePath)
         {
             string refNumberCreate = Intro2();
             bool isReal = Length2(refNumberCreate);
-            int[] factory = new int[] { 7, 3, 1 };
-            
+            int[] factory = new int[] { 7, 3, 1 };            
             int checkNumber = CheckNumberAdd(refNumberCreate, factory);
         }
         static string Intro2()
@@ -190,6 +207,7 @@ namespace ReferenceNumber1
                 checkNumber = 0;
             }
             refNumberCreate += checkNumber;
+            refNumberCreate = StringSplitter(refNumberCreate);
             Console.WriteLine($"{refNumberCreate}");
             return checkNumber;
         }
@@ -210,7 +228,6 @@ namespace ReferenceNumber1
                     {
                         Console.WriteLine(line);
                     }
-
                 }
             }
             catch (Exception ex)
@@ -221,10 +238,18 @@ namespace ReferenceNumber1
         static void CreateRefs(string filePath)
         {
             string amount = Intro3();
+            int x = Int32.Parse(amount);
             string basePart = BasePart();
+            bool isReal = Length2(basePart);
+            string[] referenceNumbers = AddNumbers(x, basePart);
 
-
+            int[] factory = new int[] { 7, 3, 1 };
+            /*int checkNumber = CheckNumberAdd(referenceNumbers, factory);
+            referenceNumbers += checkNumber;
+            referenceNumbers = StringSplitter(referenceNumbers);*/
         }
+
+
         /// <summary>
         /// Kerrotaan kuinka monta viitenumeroa halutaan
         /// </summary>
@@ -243,14 +268,30 @@ namespace ReferenceNumber1
             Console.Write("Syötä haluamasi viitenumeron alku: ");
             return Console.ReadLine();
         }
-        static string AddNumbers(int amount, string basePart)
+        static string[] AddNumbers(int count, string basePart)
         {
-            for (int i = 0; i < amount-1; i++)
+            string[] referenceNumbers = new string[count];
+            int j = 0;
+
+            for (int i = 0; i < count; i++)
             {
-                basePart += amount;
+                basePart += j;
+                j = i + 1;
+                referenceNumbers[i] = basePart;
                 Console.WriteLine($"{basePart}");
+                basePart.Remove(basePart.Length());
             }
-            return basePart;
+            return referenceNumbers;
+        }
+        static void WriteToFile(string[] numbers, string path)
+        {
+            StreamWriter A = new StreamWriter(path);
+
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                A.WriteLine(numbers[i]);
+            }
+            A.Close();
         }
     }
 }
