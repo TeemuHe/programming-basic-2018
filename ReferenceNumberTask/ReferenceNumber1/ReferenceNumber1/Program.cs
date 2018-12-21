@@ -244,11 +244,10 @@ namespace ReferenceNumber1
             string[] referenceNumbers = AddNumbers(x, basePart);
 
             int[] factory = new int[] { 7, 3, 1 };
-            /*int checkNumber = CheckNumberAdd(referenceNumbers, factory);
-            referenceNumbers += checkNumber;
-            referenceNumbers = StringSplitter(referenceNumbers);*/
+            int checkNumber = CheckNumberAdd(basePart, factory);
+            basePart += checkNumber;
+            basePart = StringSplitter(basePart);
         }
-
 
         /// <summary>
         /// Kerrotaan kuinka monta viitenumeroa halutaan
@@ -270,17 +269,21 @@ namespace ReferenceNumber1
         }
         static string[] AddNumbers(int count, string basePart)
         {
+            string path = @"C:\TEMP\referencenumber.txt";
             string[] referenceNumbers = new string[count];
             int j = 0;
-
+            int[] factory = new int[] { 7, 3, 1 };
             for (int i = 0; i < count; i++)
             {
                 basePart += j;
                 j = i + 1;
                 referenceNumbers[i] = basePart;
-                Console.WriteLine($"{basePart}");
-                basePart.Remove(basePart.Length());
+                //Console.WriteLine($"{basePart}");
+                CheckNumberAdd(basePart ,factory);
+                WriteToFile(referenceNumbers, path);
             }
+            basePart = referenceNumbers.ToString();
+
             return referenceNumbers;
         }
         static void WriteToFile(string[] numbers, string path)
